@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:purpletoko/widgets/TabButton.dart';
 import 'package:purpletoko/widgets/cardgridview.dart';
 import 'package:purpletoko/widgets/market_description.dart';
 import 'package:purpletoko/widgets/number_shopes.dart';
@@ -33,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen>
         body: Column(
           children: [
             Container(
-              height: 310,
+              height: 285,
               width: double.infinity,
               decoration: const BoxDecoration(
                 image: DecorationImage(
@@ -76,27 +75,76 @@ class _HomeScreenState extends State<HomeScreen>
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal:20.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Sort by Categories',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
+                  SizedBox(width: 10,),
                   Icon(Icons.filter)
                 ],
               ),
             ),
             SizedBox(
-              height: 5,
-            ),
-            
-            SizedBox(height: 38,child: TabButton(),),
-            SizedBox(
               height: 10,
             ),
-            Expanded(child: ShopCardGrid())
+            TabBar(
+              
+              controller: tabController,
+              tabs: [
+                Chip(
+                  label: SizedBox(
+                    height: 20,
+                    width: 90,
+                    child: Center(
+                      child: Text(
+                        'All',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+                Chip(
+                  label: SizedBox(
+                    height: 20,
+                    width: 90,
+                    child: Center(
+                      child: Text(
+                        'Featured',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+                Chip(
+                  label: SizedBox(
+                    height: 20,
+                    width: 90,
+                    child: Center(
+                      child: Text(
+                        'New',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: TabBarView(
+                controller: tabController,
+                children:const [
+                  ShopCardGrid(),
+                  ShopCardGrid(),
+                  ShopCardGrid(),
+                ],
+              ),
+            ),
+            //SizedBox(height: 38,child: TabButton(),),
+            
             //  ShopCard()
           ],
         ),

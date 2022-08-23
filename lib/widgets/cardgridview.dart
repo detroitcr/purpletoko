@@ -9,10 +9,10 @@ class ShopCardGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      scrollDirection: Axis.vertical,
+        scrollDirection: Axis.vertical,
         itemCount: shopdata.length,
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 3/4),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, childAspectRatio: 3 / 4,),
         itemBuilder: (context, index) {
           final data = shopdata[index];
           return ShopCard(

@@ -16,7 +16,9 @@ class TabButton extends StatelessWidget {
       itemCount: tabName.length,
       itemBuilder: ((context, index) {
         final data = tabName[index];
-        return Chip(
+        return 
+        
+        Chip(
           label: SizedBox(
             width: 90,
             child: Center(
@@ -26,7 +28,8 @@ class TabButton extends StatelessWidget {
               ),
             ),
           ),
-        );
+        )
+        ;
       }),
     );
   }

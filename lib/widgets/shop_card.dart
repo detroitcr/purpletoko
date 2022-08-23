@@ -98,47 +98,59 @@ class _ShopCardState extends State<ShopCard> {
           SizedBox(
             height: 10,
           ),
-          Row(
-            children: [
-              Text(
-                widget.shopname,
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
+          Padding(
+            padding: const EdgeInsets.only(left:8.0),
+            child: Row(
+              children: [
+                Text(
+                  widget.shopname,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           SizedBox(
             height: 8,
           ),
-          Row(
-            children: [
-              Text(widget.shopType,),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left:8.0),
+            child: Row(
+              children: [
+                Text(widget.shopType,),
+              ],
+            ),
           ),
           SizedBox(
             height: 8,
           ),
-          Row(
-            children: [
-              Icon(
-                Icons.location_city,
-              ),
-              Text(
-                widget.location,
-                style: TextStyle(color: CustomColor.appbarColor),
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left:8.0),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.location_city,
+                ),
+                Text(
+                  widget.location,
+                  style: TextStyle(color: CustomColor.appbarColor),
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: 8,
           ),
-          Row(
-            children: [
-              Text(
-                widget.cost,
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left:8.0),
+            child: Row(
+              children: [
+                Text(
+                  widget.cost,
+                ),
+              ],
+            ),
           ),
       ],
     );
